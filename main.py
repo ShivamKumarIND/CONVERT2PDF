@@ -37,7 +37,7 @@ st.set_page_config(
     page_title="PDF Tools - Shivam IT Solutions",
     page_icon="📄",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Tools metadata dictionary
@@ -547,16 +547,19 @@ def main():
     inject_custom_css()
     
     # Logo and header
-    logo_path = Path("Logo.jpg")
+    logo_path = Path("logo.png")
     
-    col1, col2 = st.columns([1, 8])
+    # Display logo and title in header with proper spacing
+    st.markdown("<div style='margin-bottom: 10px;'></div>", unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1.2, 10])
     
     with col1:
         if logo_path.exists():
-            st.image(str(logo_path), width=80)
+            st.image(str(logo_path), width=120)
     
     with col2:
-        st.markdown("<h1 style='margin-top: 10px;'>PDF Tools</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='margin-top: 20px; margin-bottom: 0px; color: #667eea;'>PDF Tools</h1>", unsafe_allow_html=True)
     
     # Hero section
     render_hero_section()

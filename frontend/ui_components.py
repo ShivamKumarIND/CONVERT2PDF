@@ -8,6 +8,33 @@ def inject_custom_css():
     """Inject custom CSS for better styling"""
     st.markdown("""
         <style>
+        /* Remove top padding/margin */
+        .main > div {
+            padding-top: 1.5rem;
+        }
+        
+        .block-container {
+            padding-top: 1.5rem;
+            padding-bottom: 0rem;
+        }
+        
+        /* Logo styling - ensure full visibility */
+        [data-testid="stImage"] {
+            margin-top: 0px;
+            overflow: visible !important;
+        }
+        
+        [data-testid="column"]:first-child {
+            overflow: visible !important;
+        }
+        
+        img {
+            border-radius: 8px;
+            display: block !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+        
         /* Main container */
         .main {
             background-color: #f8f9fa;
@@ -146,6 +173,8 @@ def render_hero_section():
             </div>
         </div>
     """, unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
 
 def render_category_tabs(tools_data):
     """Render category tabs for navigation"""
