@@ -79,8 +79,9 @@ temp/*
 output/*
 !output/.gitkeep
 
-# Ignore all image files except Logo.jpg
+# Ignore all image files except Logo.jpg and logo.png
 *.jpg
 *.jpeg
 *.png
 !Logo.jpg
+!logo.png
